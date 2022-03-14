@@ -693,6 +693,22 @@ input:checked ~ .accordion-info {
   justify-content: space-between;
 }
 
+.footer-links a {
+    color: var(--color-primary);
+}
+
+.footer-links a:visited {
+    color: var(--color-secondary);
+}
+
+.terms a {
+    color: var(--color-primary);
+}
+
+.terms a:visited {
+    color: var(--color-secondary);
+}
+
 /*==================  Media Queries  ==================*/
 
 /* Smaller phones */
