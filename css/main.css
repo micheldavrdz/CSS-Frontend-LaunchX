@@ -1,0 +1,1006 @@
+/* Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;800&display=swap");
+
+:root {
+  /* Header size variable */
+  --header-size: 3rem;
+
+  /* Font */
+  --font-body: "Poppins", sans-serif;
+
+  /* Font sizes */
+  --font-big: 2rem;
+  --font-h1: 1.5rem;
+  --font-h2: 1.25rem;
+  --font-h3: 1.125rem;
+  --font-normal: 0.938rem;
+  --font-small: 0.813rem;
+  --font-smaller: 0.75rem;
+
+  /* Font weights */
+  --font-medium: 500;
+  --font-semi-bold: 600;
+  --font-bold: 800;
+
+  /* Colors */
+  --color-primary: #6d7b93;
+  --color-secondary: #3454d2;
+  --color-tertiary: #2c4cca;
+  --color-accent: #ffd012;
+  --color-title: #1f3e72;
+  --color-footer: #eef3ff;
+
+  /*
+    Margins (ma = margin)
+    Measured in rem (1rem = 16px) and called according to their size (0-25 = .25rem, 0-5 = .5rem, etc)
+    */
+  --ma-0-25: 0.25rem;
+  --ma-0-5: 0.5rem;
+  --ma-0-75: 0.75rem;
+  --ma-1: 1rem;
+  --ma-1-5: 1.5rem;
+  --ma-2: 2rem;
+  --ma-2-5: 2.5rem;
+  --ma-3: 3rem;
+  --ma-3-5: 3.5rem;
+  --ma-4: 4rem;
+
+  /*
+    Paddings (pa = padding)
+    Measured in rem (1rem = 16px) and called according to their size (0-25 = .25rem, 0-5 = .5rem, etc)
+    */
+  --pa-0-25: 0.25rem;
+  --pa-0-5: 0.5rem;
+  --pa-0-75: 0.75rem;
+  --pa-1: 1rem;
+  --pa-1-5: 1.5rem;
+  --pa-2: 2rem;
+  --pa-2-5: 2.5rem;
+  --pa-3: 3rem;
+  --pa-3-5: 3.5rem;
+  --pa-4: 4rem;
+
+  /* z-index */
+  --z-fixed: 100;
+}
+
+@media screen and (min-width: 968px) {
+  :root {
+    --font-big: 3rem;
+    --font-h1: 2.5rem;
+    --font-h2: 1.5rem;
+    --font-h3: 1.25rem;
+    --font-normal: 1rem;
+    --font-small: 0.875rem;
+    --font-smaller: 0.813rem;
+  }
+}
+
+
+/*==================  Base CSS  ==================*/
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: var(--font-normal);
+  background-color: #fff;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* CSS Classes */
+
+.grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.header {
+  width: 100%;
+  position: fixed;
+  left: 0;
+  /* Z-index helps to keep the header floating on top of the page */
+  z-index: var(--z-fixed);
+  background-color: rgba(255, 255, 255, 0.5);
+  /* Backdrop-filter is only avaliable in webkit and chromium based browsers, but it's needed for the blur effect (maybe there's a way to do it with JS? -Michel) */
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+}
+
+.container {
+  margin-left: var(--ma-1-5);
+  margin-right: var(--ma-1-5);
+}
+
+.section {
+  padding: var(--pa-2) 0 var(--pa-4);
+}
+
+/*==================  Botones del sitio  ==================*/
+
+.btn-hoax {
+  background-color: var(--color-secondary);
+  color: #fff !important;
+  padding: var(--pa-0-75) var(--pa-2);
+  border-radius: 0.3rem;
+  box-shadow: 0px 10px 20px rgba(24, 25, 29, 0.1);
+  white-space: nowrap;
+}
+
+.btn-hoax:hover {
+  background-color: var(--color-tertiary);
+}
+
+/*==================  Navigation Bar  ==================*/
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: var(--header-size);
+  padding-right: 5rem;
+}
+
+.nav-logo {
+  font-size: var(--font-h2);
+  color: var(--color-title);
+  font-weight: var(--font-semi-bold);
+}
+
+.nav-logo:hover {
+  color: var(--color-secondary);
+}
+
+.nav-list {
+  grid-template-columns: repeat(5, 1fr);
+  gap: 2rem;
+  align-items: center;
+}
+
+.nav-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: var(--font-normal);
+  color: var(--color-title);
+  font-weight: var(--font-medium);
+}
+
+.nav-link:hover {
+  color: var(--color-secondary);
+}
+
+/*==================  Hero Banner  ==================*/
+
+.section-hero {
+  position: relative;
+}
+
+.hero-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 100vh;
+}
+
+.hero-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--pa-2);
+}
+
+.hero-text h1 {
+  font-size: 3.5rem;
+  font-weight: var(--font-bold);
+  color: var(--color-title);
+  margin-bottom: var(--pa-1-5);
+}
+
+.hero-text p {
+  font-size: 1.2rem;
+  color: var(--color-primary);
+  margin-bottom: var(--pa-4);
+}
+
+.hero-icons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.hero-icons span {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: var(--pa-1);
+}
+
+/* Targeting the i tag to style the icon doesn't work, so I target the svg it creates instead. (this happens in all icons from now on)*/
+.hero-icons span svg {
+  padding: var(--pa-0-5);
+  margin-right: 0.4rem;
+  color: var(--color-accent);
+  background-color: rgba(255, 208, 18, 0.2);
+  border-radius: 10%;
+  box-shadow: 0 7px 7px -2.5px #fff3c1;
+}
+
+.hero-icons span p {
+  color: var(--color-title);
+  font-weight: var(--font-medium);
+}
+
+.hero-img {
+  background-image: url("../img/hero-banner.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.hero-schedule {
+  margin-top: 9rem;
+  margin-right: 10rem;
+}
+
+.hero-schedule span {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-bottom: var(--pa-1);
+}
+
+.hero-schedule span svg {
+  padding: var(--pa-0-5);
+  margin-right: 0.4rem;
+  color: var(--color-secondary);
+  background-color: rgba(52, 84, 210, 0.144);
+  border-radius: 10%;
+  box-shadow: 0 5px 7px -2.5px rgba(52, 84, 210, 0.2);
+}
+
+.schedule-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.schedule-info div {
+  padding: 0 var(--pa-3);
+}
+
+.schedule-info div p {
+  color: var(--color-title);
+  font-weight: var(--font-semi-bold);
+}
+
+.schedule-info div span {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-bottom: var(--pa-1);
+}
+
+.schedule-info div span svg {
+  padding: var(--pa-0-5);
+  margin-right: 0.4rem;
+  color: var(--color-secondary);
+  background-color: rgba(52, 84, 210, 0.144);
+  border-radius: 10%;
+  box-shadow: 0 5px 7px -2.5px rgba(52, 84, 210, 0.2);
+}
+
+.schedule-info div span p {
+  font-weight: var(--font-medium);
+  color: var(--color-primary);
+}
+
+.schedule-info-fact {
+  text-indent: 2.3rem;
+}
+
+.schedule-info .schedule-button a {
+  background-color: var(--color-secondary);
+  color: #fff !important;
+  padding: var(--pa-0-75) var(--pa-2);
+  border-radius: 0.3rem;
+  box-shadow: 0 5px 7px -2.5px rgba(52, 84, 210, 0.2);
+}
+
+.schedule-info .schedule-button a:hover {
+  background-color: var(--color-tertiary);
+}
+
+/*==================  Why should I vaccine?  ==================*/
+
+.section-vaccine {
+  min-height: 100vh;
+  padding: 6rem;
+}
+
+.vaccine-logos {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.vaccine-logos .vaccine-logo img {
+  width: 70%;
+  height: auto;
+  align-items: center;
+  filter: brightness(1.2);
+}
+
+.vaccine-logos .vaccine-logo img:hover {
+  filter: brightness(1);
+}
+
+.vaccine-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: var(--pa-2);
+  margin: 0;
+}
+
+.vaccine-info h2 {
+  font-size: 2rem;
+  color: var(--color-title);
+  padding-bottom: var(--pa-1-5);
+}
+
+.vaccine-info p {
+  font-size: 1.2rem;
+  color: var(--color-primary);
+}
+
+.vaccine-fact-container {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  padding: var(--pa-2) var(--pa-2) 0 var(--pa-2);
+}
+
+.vaccine-fact {
+  margin-right: var(--ma-2);
+  padding: 1.3rem;
+  border: 3px solid #e9f1fd;
+  border-radius: 0.4rem;
+}
+
+.vaccine-fact:hover {
+  border: 3px solid white;
+  box-shadow: 0 5px 7px -2.5px rgba(52, 84, 210, 0.2);
+}
+
+.vaccine-fact-icon svg {
+  padding: var(--pa-0-5);
+  margin-right: 0.4rem;
+  color: var(--color-secondary);
+  background-color: rgba(52, 84, 210, 0.144);
+  border-radius: 10%;
+  box-shadow: 0 5px 7px -2.5px rgba(52, 84, 210, 0.2);
+}
+
+.vaccine-fact:hover > .vaccine-fact-icon svg {
+  border: 1px solid white;
+}
+
+.vaccine-fact-text h3 {
+  font-weight: var(--font-semi-bold);
+  color: var(--color-title);
+  padding: var(--pa-1) 0;
+}
+
+.vaccine-fact-text p {
+  color: var(--color-primary);
+  font-size: var(--font-small);
+}
+
+/*==================  Preparations before vaccine  ==================*/
+
+.preparations-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 100vh;
+}
+
+.prep-img {
+  background-image: url("../img/woman-hand-up-min.png");
+  background-size: cover;
+  background-position: center;
+}
+
+.preparations-info {
+  padding: 0 var(--pa-3);
+  display: flex;
+  flex-direction: column;
+}
+
+.preparations-info h2 {
+  font-size: 2.5rem;
+  color: var(--color-title);
+  padding-bottom: var(--pa-1-5);
+}
+
+.preparations-info p {
+  font-size: var(--font-normal);
+  color: var(--color-primary);
+}
+
+input {
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
+}
+
+.preparations-accordion {
+  padding-top: 6rem;
+}
+
+.accordion-wrapper {
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+.accordion {
+  width: 100%;
+  color: var(--color-title);
+  border-radius: 0.3rem;
+  overflow: hidden;
+  margin-bottom: var(--ma-1);
+  border: 3px solid #f8f9fc;
+}
+
+.accordion:hover {
+  border: 3px solid white;
+  box-shadow: 0px 10px 20px rgba(48, 80, 205, 0.1);
+}
+
+.accordion:last-child {
+  margin-bottom: 0;
+}
+
+.accordion-label {
+  display: flex;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  padding: var(--pa-1);
+  background: white;
+  font-weight: var(--font-medium);
+  cursor: pointer;
+  font-size: 1.1rem;
+}
+
+/* Add a down facing triangle to the right of the label which I can later rotate */
+.accordion-label::after {
+  content: "\25BE";
+  width: 1rem;
+  height: 1rem;
+  text-align: center;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  background-color: rgba(52, 84, 210, 0.144);
+  border-radius: 10%;
+  padding: 0.3rem;
+  box-shadow: 0px 10px 20px rgba(48, 80, 205, 0.1);
+}
+
+.accordion-label svg {
+  padding: var(--pa-0-5);
+  margin-right: 0.4rem;
+  color: var(--color-secondary);
+  background-color: rgba(52, 84, 210, 0.144);
+  border-radius: 10%;
+  box-shadow: 0 5px 7px -2.5px rgba(52, 84, 210, 0.2);
+}
+
+.accordion-info {
+  max-height: 0;
+  padding: 0 var(--pa-1);
+  color: rgba(4, 57, 94, 1);
+  background: white;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.accordion-info p {
+  margin: 0;
+  color: var(--color-primary);
+  font-size: var(--font-small);
+}
+
+input:checked + .accordion-label {
+  box-shadow: 0px 10px 20px rgba(48, 80, 205, 0.1);
+}
+input:checked + .accordion-label::after {
+  -webkit-transform: rotate(180deg);
+  transform: rotate(180deg);
+  border: 2px solid white;
+}
+
+input:checked ~ .accordion-info {
+  max-height: 100vh;
+  padding: var(--pa-1);
+}
+
+/*==================  Emergency Contact  ==================*/
+
+.emergency-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 100vh;
+}
+
+.eme-img {
+  background-image: url("../img/men-phone-min.png");
+  background-size: cover;
+  background-position: center;
+}
+
+.emergency-info {
+  padding: var(--pa-4);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.emergency-info h2 {
+  font-size: 2.5rem;
+  color: var(--color-title);
+  padding-bottom: var(--pa-1-5);
+  align-items: flex-start;
+}
+
+.emergency-info p {
+  font-size: var(--font-normal);
+  color: var(--color-primary);
+}
+
+.contact-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 3rem;
+  justify-content: center;
+  align-content: center;
+  margin: var(--ma-4) 6rem;
+}
+
+.contact-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border: 3px solid #f8f9fc;
+  padding: var(--pa-1-5);
+  border-radius: 0.6rem;
+}
+
+.contact-info:hover {
+  border: 3px solid white;
+  box-shadow: 0px 10px 20px rgba(48, 80, 205, 0.1);
+}
+
+.contact-info-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--ma-2);
+}
+
+.contact-info-wrapper svg {
+  padding: 0.5rem;
+  margin-right: 0.4rem;
+  color: var(--color-secondary);
+  background-color: rgba(52, 84, 210, 0.144);
+  border-radius: 10%;
+  box-shadow: 0 5px 7px -2.5px rgba(52, 84, 210, 0.2);
+}
+
+.contact-info-wrapper > svg {
+  margin-right: var(--ma-1);
+}
+
+.contact-info-wrapper h3 {
+  font-weight: var(--font-medium);
+  color: var(--color-title);
+}
+
+.contact-info-wrapper p {
+  font-size: var(--font-smaller);
+  color: var(--color-primary);
+}
+
+.contact-info-button {
+  text-align: center;
+  background-color: #e9f1fd;
+  color: var(--color-secondary);
+  padding: var(--pa-0-5) var(--pa-1-5);
+  border-radius: 0.2rem;
+  font-weight: var(--font-medium);
+}
+
+.contact-info:hover > .contact-info-wrapper > svg {
+  border: 1px solid white;
+}
+
+.contact-info:hover > .contact-info-button {
+  background-color: var(--color-secondary);
+  color: white;
+  box-shadow: 0 5px 7px -2.5px rgba(52, 84, 210, 0.2);
+}
+
+/*==================  Footer  ==================*/
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: var(--ma-3);
+  background-color: #e9f1fd;
+  min-height: 30vh;
+  max-width: 100vw;
+  padding: var(--pa-3) 5rem;
+}
+
+.footer-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.footer-links-wrapper {
+  display: flex;
+  flex-direction: row;
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding-right: var(--pa-1);
+}
+
+.footer-links:last-child {
+  padding-right: 0;
+}
+
+.legal-container {
+  margin-top: var(--ma-2);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/*==================  Media Queries  ==================*/
+
+/* Smaller phones */
+
+@media screen and (min-width: 320px) {
+  .header {
+    padding: var(--pa-2);
+    background-color: white;
+  }
+
+  .nav {
+    flex-direction: column;
+    padding-bottom: 0;
+    align-items: center;
+    justify-content: center;
+    padding: var(--pa-2);
+  }
+
+  .nav-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .section-hero {
+    padding-top: var(--pa-4);
+  }
+  .hero-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    min-height: 100vh;
+  }
+
+  .hero-text {
+    padding: var(--pa-2);
+  }
+
+  .hero-text p {
+    margin-bottom: var(--ma-1);
+  }
+
+  .hero-schedule {
+    margin-top: var(--ma-2);
+    margin-right: 0;
+  }
+
+  .hero-schedule span {
+    padding: 0;
+  }
+
+  .hero-img {
+    display: none;
+  }
+
+  .schedule-info {
+    position: inherit;
+    background-color: initial;
+    left: 0;
+    flex-direction: column;
+  }
+
+  .schedule-info div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: var(--pa-0-5);
+  }
+
+  .schedule-info-fact {
+    text-indent: 0;
+  }
+
+  .schedule-button {
+    padding: var(--pa-1-5);
+  }
+
+  .section-vaccine {
+    padding: 0;
+  }
+
+  .vaccine-fact-container {
+    flex-direction: column;
+  }
+
+  .vaccine-fact {
+    margin-bottom: var(--ma-1);
+  }
+
+  .preparations-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    min-height: 100vh;
+  }
+
+  .preparations-info {
+    padding: var(--pa-2);
+  }
+
+  .prep-img {
+    display: none;
+  }
+
+  .emergency-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    min-height: 100vh;
+  }
+
+  .eme-img {
+    display: none;
+  }
+
+  .emergency-info {
+    align-items: flex-start;
+    padding: var(--pa-2);
+  }
+
+  .contact-wrapper {
+    grid-template-columns: 1fr;
+    grid-gap: 1.5rem;
+    align-items: flex-start;
+    margin: var(--ma-2);
+  }
+
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-info {
+    margin-bottom: var(--ma-1-5);
+  }
+
+  .footer-links-wrapper {
+    flex-direction: column;
+  }
+
+  .footer-links {
+    margin-bottom: var(--ma-1);
+  }
+
+  .legal-container {
+    flex-direction: column;
+  }
+
+  .legal-container p {
+    margin-bottom: var(--ma-1);
+  }
+
+  .terms {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* Most phones */
+
+@media screen and (min-width: 480px) {
+  .header {
+    padding: var(--pa-1);
+    background-color: white;
+  }
+
+  .section-hero {
+    padding-top: var(--pa-4);
+  }
+
+  .nav {
+    flex-direction: column;
+    padding-bottom: 0rem;
+    align-items: center;
+    justify-content: center;
+    padding: var(--pa-2);
+  }
+
+  .nav-list {
+    grid-template-columns: repeat(5, 1fr);
+  }
+
+  .hero-container {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .hero-img {
+    display: block;
+  }
+
+  .schedule-info {
+    position: inherit;
+    flex-direction: row;
+    background-color: initial;
+    padding: var(--pa-3) var(--pa-1) var(--pa-1) var(--pa-1);
+  }
+
+  .vaccine-fact-container {
+    flex-direction: row;
+  }
+
+  .preparations-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 100vh;
+  }
+
+  .prep-img {
+    display: block;
+  }
+
+  .emergency-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 100vh;
+  }
+
+  .eme-img {
+    display: block;
+  }
+
+  .footer-container {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .footer-links-wrapper {
+    flex-direction: row;
+  }
+
+  .footer-links {
+    margin-bottom: var(--ma-1);
+  }
+
+  .legal-container {
+    flex-direction: row;
+  }
+
+  .terms {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+/* Most tablets */
+
+@media screen and (min-width: 768px) {
+  .contact-wrapper {
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 1.5rem;
+    align-items: flex-start;
+    margin: var(--ma-2);
+  }
+
+  .header {
+    padding: var(--pa-1-5);
+    background-color: rgba(255, 255, 255, 0.5);
+  }
+
+  .section-hero {
+    padding-top: 0;
+  }
+
+  .grid {
+    display: grid;
+    gap: 0.5rem;
+  }
+
+  .nav {
+    flex-direction: row;
+    padding: 0;
+  }
+
+  .container {
+    padding-right: 0;
+  }
+}
+
+/* Small desktops */
+
+@media screen and (min-width: 992px) {
+    .nav {
+        justify-content: space-between;
+        align-items: center;
+    }	
+
+  .schedule-info {
+    position: absolute;
+    bottom: 0;
+    left: 15rem;
+    padding: var(--pa-1);
+    border-radius: 0.5rem;
+    background-color: rgba(255, 255, 255, 0.9);
+    /* Backdrop-filter is only avaliable in webkit and chromium based browsers, but it's needed for the blur effect (maybe there's a way to do it with JS? -Michel) */
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+  }
+
+  .schedule-info-fact {
+    text-indent: 2.3rem;
+  }
+
+  .header {
+    padding: var(--pa-1-5);
+  }
+}
+
+/* Large desktops */
+
+@media screen and (min-width: 1200px) {
+  .schedule-info {
+    left: 25rem;
+  }
+}
