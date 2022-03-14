@@ -6,7 +6,7 @@ This is a CSS knowledge project for LaunchX. Available online at https://vaccina
 
 ### Special Thanks
 
-Thanks to Flaticon for the vaccination icon used as favicon, you can find it [here](https://www.flaticon.com/free-icons/vaccine).
+Thanks to Flaticon for the vaccine icon used as favicon, you can find it [here](https://www.flaticon.com/free-icons/vaccine).
 
 Thanks to FontAwesome for the icons used in the project, you can see their website [here](https://fontawesome.com).
 
@@ -20,7 +20,7 @@ Este es un proyecto de conocimientos en CSS para LaunchX. Disponible online en h
 
 ### Muchas Gracias
 
-Gracias a Flaticon por el icono de vacinación usado como favicon, pueden encontrarlo [aqui](https://www.flaticon.com/free-icons/vaccine).
+Gracias a Flaticon por el icono de vacuna usado como favicon, pueden encontrarlo [aqui](https://www.flaticon.com/free-icons/vaccine).
 
 Gracias a FontAwesome por los iconos utilizados en el proyecto, pueden ver su página web [aqui](https://fontawesome.com).
 
